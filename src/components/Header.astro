@@ -61,7 +61,7 @@ import ThemeToggle from './ThemeToggle';
   //   animation-timeline: scroll();
   //   animation-range: 0px 300px;
   // }
-  // conver to javascript
+
   document.addEventListener('DOMContentLoaded', function () {
     // Define la animación usando anime.js
     const avatarAnimation = anime.timeline({
@@ -79,6 +79,10 @@ import ThemeToggle from './ThemeToggle';
       translateY: 0,
     });
 
+    function playAnimation() {
+      avatarAnimation.play();
+    }
+
     // Agrega la animación al hacer scroll
     window.addEventListener('scroll', function () {
       const scrollY = window.scrollY;
@@ -89,6 +93,24 @@ import ThemeToggle from './ThemeToggle';
       } else {
         avatarAnimation.seek(1); // Reproduce la animación completa si el scroll está en o después del punto de activación
       }
+    });
+
+    // Agrega la animación al hacer touch
+    let touchStartY;
+
+    window.addEventListener('touchstart', function (e) {
+      touchStartY = e.touches[0].clientY;
+      playAnimation(); // Inicia la animación al tocar la pantalla
+    });
+
+    window.addEventListener('touchmove', function (e) {
+      const currentY = e.touches[0].clientY;
+      const deltaY = currentY - touchStartY;
+
+      // Puedes realizar acciones adicionales según el desplazamiento táctil si es necesario
+
+      // Nota: Si quieres ajustar la animación según el desplazamiento táctil,
+      // puedes modificar el código aquí según tus necesidades
     });
   });
 </script>
