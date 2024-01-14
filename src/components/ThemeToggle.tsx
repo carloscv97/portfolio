@@ -5,7 +5,7 @@ export default function ThemeToggle() {
   const { handleClick, theme } = useDarkMode();
 
   return (
-    <button onClick={handleClick}>
+    <button onClick={handleClick} aria-label="theme-toggle">
       {theme.value === 'dark' ? (
         <SunIcon className="size-8" />
       ) : (
