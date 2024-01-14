@@ -1,0 +1,60 @@
+---
+import { GithubIcon, LinkedinIcon, ResumeIcon } from '../icons';
+import ButtonIcon from './ButtonIcon.astro';
+---
+
+<section class="flex mt-3 flex-col sm:flex-row items-center gap-5">
+  <figure
+    class="relative border-white bg-blue-100 dark:bg-gray-800/80 border-8 rounded-2xl dark:border-gray-700 shadow-lg overflow-hidden"
+  >
+    <img
+      src="/avatar.svg"
+      alt="avatar"
+      class="size-40 relative -bottom-1 object-fill"
+    />
+  </figure>
+  <div class="flex flex-col text-center sm:text-left gap-3">
+    <div class="flex gap-1">
+      <h1 class="text-2xl text-slate-600 dark:text-slate-300 sm:text-4xl font-bold">
+        Carlos C
+      </h1>
+      <span class="text-amber-600 dark:text-sky-blue text-2xl sm:text-4xl font-bold">
+        .
+      </span>
+    </div>
+
+    <p class="text-sm text-slate-700 dark:text-slate-300 e sm:text-lg max-w-xl">
+      Full Stack Developer. <span
+        class="text-amber-600 font-semibold dark:text-sky-blue"
+      >
+        +4 years of experience
+      </span> creating web applications and solutions for companies in different sectors.
+    </p>
+    <div class="flex justify-center sm:justify-start gap-3">
+      <ButtonIcon
+        href="https://www.linkedin.com/in/carlos-cordoba97"
+        tooltipText="Linkedin"
+        class="bg-[#0a66c2] hover:bg-opacity-70 text-white"
+      >
+        <LinkedinIcon class="h-6 w-5" />
+      </ButtonIcon>
+
+      <ButtonIcon
+        href="https://github.com/carloscv97"
+        tooltipText="Github"
+        class="bg-slate-400 hover:bg-slate-500 dark:bg-slate-500 dark:hover:bg-slate-400 text-white"
+      >
+        <GithubIcon class="h-6 w-5 fill-white" />
+      </ButtonIcon>
+
+      <ButtonIcon
+        href="#"
+        tooltipText="My Resume"
+        class="bg-blue-200 hover:bg-blue-300 text-blue-600"
+      >
+        <ResumeIcon class="h-6 w-5" />
+      </ButtonIcon>
+    </div>
+  </div>
+</section>
+<hr class="border border-dotted border-gray-400 dark:border-gray-600 rounded-md" />

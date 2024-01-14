@@ -1,0 +1,16 @@
+---
+import { EXPERIENCES } from '../data/Experiences';
+import { BriefcaseIcon } from '../icons';
+import ExperienceItem from './ExperienceItem.astro';
+import SectionHeader from './SectionHeader.astro';
+---
+
+<section class="w-full">
+  <SectionHeader title="Experience">
+    <BriefcaseIcon class="size-8 fill-blue-400 dark:fill-slate-200" />
+  </SectionHeader>
+
+  <ol class="relative border-s border-slate-400 ml-3 flex flex-col gap-7">
+    {EXPERIENCES.map(experience => <ExperienceItem {...experience} />)}
+  </ol>
+</section>

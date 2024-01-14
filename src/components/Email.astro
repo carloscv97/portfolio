@@ -1,0 +1,68 @@
+---
+import { CopyIcon, EnvelopeIcon, SendEmailIcon } from '../icons';
+import SectionHeader from './SectionHeader.astro';
+import Tooltip from './Tooltip.astro';
+---
+
+<section class="w-full">
+  <SectionHeader title="Email">
+    <EnvelopeIcon class="size-8 fill-blue-400 dark:fill-slate-200" />
+  </SectionHeader>
+  <div class="flex gap-2">
+    <div class="flex flex-1">
+      <Tooltip text="Copy Email" classes="inline-flex">
+        <span
+          onclick="copyToClipboard()"
+          id="copy-email"
+          class="inline-flex items-center cursor-pointer px-3 text-sm text-gray-900 bg-gray-100 border border-e-0 border-gray-100 rounded-s-md dark:bg-gray-800/50 dark:text-gray-400 dark:border-gray-800/50"
+        >
+          <CopyIcon class="size-5 fill-gray-400" />
+        </span>
+      </Tooltip>
+      <input
+        id="email"
+        type="text"
+        class="rounded-none rounded-e-lg bg-gray-100 px-3 text-gray-900 block
+        w-full py-2.5 dark:bg-gray-800/80 dark:placeholder-gray-500 dark:text-gray-400"
+        disabled
+        value="carlos.cv9710@gmail.com"
+      />
+    </div>
+    <Tooltip text="Send me email">
+      <a
+        href="mailto:carlos.cv9710@gmail.com"
+        target="_blank"
+        rel="noreferrer"
+        class="flex bg-blue-200 hover:bg-opacity-80 dark:bg-blue-300 hover:dark:bg-opacity-80 py-2.5 px-4 rounded-lg"
+      >
+        <SendEmailIcon class="size-6 fill-white" />
+      </a>
+    </Tooltip>
+  </div>
+</section>
+
+<script is:inline>
+  function copyToClipboard() {
+    const email = document.getElementById('email');
+    const copyEmail = document.getElementById('copy-email');
+    email.select();
+    email.setSelectionRange(0, 99999);
+
+    navigator.clipboard
+      .writeText(email.value)
+      .then(function () {
+        console.log('Texto copiado con éxito');
+      })
+      .catch(function (err) {
+        console.error('Error al copiar el texto: ', err);
+      });
+
+    const svg = copyEmail.innerHTML;
+
+    copyEmail.innerHTML = 'Copied';
+
+    setTimeout(() => {
+      copyEmail.innerHTML = svg;
+    }, 1000);
+  }
+</script>

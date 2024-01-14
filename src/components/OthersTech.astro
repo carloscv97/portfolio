@@ -1,0 +1,22 @@
+---
+import { OTHER_TECH } from '../data/OtherTech';
+import { TerminalIcon } from '../icons';
+import SectionHeader from './SectionHeader.astro';
+import Tooltip from './Tooltip.astro';
+---
+
+<section class="w-full">
+  <SectionHeader title="Managing Other Technologies">
+    <TerminalIcon class="size-8 fill-blue-400 dark:fill-slate-200" />
+  </SectionHeader>
+
+  <div class="flex flex-wrap gap-2">
+    {
+      OTHER_TECH.map(tech => (
+        <Tooltip text={tech.name} classes="hover:translate-y-1">
+          <tech.icon class={`size-16 inline-block ${tech.class}`} />
+        </Tooltip>
+      ))
+    }
+  </div>
+</section>

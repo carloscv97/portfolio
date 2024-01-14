@@ -1,0 +1,17 @@
+---
+import Tooltip from './Tooltip.astro';
+
+const { href, tooltipText } = Astro.props;
+---
+
+<Tooltip text={tooltipText}>
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    data-tooltip="tooltip-default"
+    class=`py-2 px-4 flex gap-2 transition-all  rounded-xl font-semibold place-items-center cursor-pointer ${Astro.props.class}`
+  >
+    <slot />
+  </a>
+</Tooltip>
