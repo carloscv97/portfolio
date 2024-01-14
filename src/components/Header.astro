@@ -6,9 +6,12 @@ import ThemeToggle from './ThemeToggle';
   id="header-nav"
   class="sticky h-16 top-0 z-10 dark:bg-dark-blue dark:bg-opacity-80 mx-auto max-w-3xl flex justify-between items-center py-1 px-5 bg-opacity-80 backdrop-blur-lg"
 >
-  <div class="flex flex-1 relative items-center gap-5" id="content-avatar">
+  <div
+    class="flex flex-1 relative items-center gap-5 opacity-0 -translate-y-5 transition-all"
+    id="content-avatar"
+  >
     <figure
-      class="relativeborder-white bg-blue-200 dark:bg-gray-800/80 border-[3px] rounded-md dark:border-gray-700 shadow-lg overflow-hidden"
+      class="relative border-white bg-blue-200 dark:bg-gray-800/80 border-[3px] rounded-md dark:border-gray-700 shadow-lg overflow-hidden"
     >
       <img
         src="/avatar.svg"
@@ -26,7 +29,7 @@ import ThemeToggle from './ThemeToggle';
 </header>
 
 <style>
-  @keyframes avatar-appear {
+  /* @keyframes avatar-appear {
     0% {
       opacity: 0;
       transform: translateY(-20px);
@@ -41,7 +44,24 @@ import ThemeToggle from './ThemeToggle';
     animation: avatar-appear linear both;
     animation-timeline: scroll();
     animation-range: 0px 300px;
-  }
+  } */
 </style>
 
-<script is:inline></script>
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+    const avatarElement = document.getElementById('content-avatar');
+    const scrollTrigger = 200; // Puedes ajustar esto según tus necesidades
+
+    window.addEventListener('scroll', function () {
+      const scrollY = window.scrollY;
+
+      if (scrollY > scrollTrigger) {
+        avatarElement.classList.remove('opacity-0', '-translate-y-5');
+        avatarElement.classList.add('opacity-100', 'translate-y-0');
+      } else {
+        avatarElement.classList.remove('opacity-100', 'translate-y-0');
+        avatarElement.classList.add('opacity-0', '-translate-y-5');
+      }
+    });
+  });
+</script>
