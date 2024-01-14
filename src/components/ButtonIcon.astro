@@ -1,12 +1,13 @@
 ---
 import Tooltip from './Tooltip.astro';
 
-const { href, tooltipText } = Astro.props;
+const { href, tooltipText, download } = Astro.props;
 ---
 
 <Tooltip text={tooltipText}>
   <a
     href={href}
+    download={download}
     target="_blank"
     rel="noopener noreferrer"
     data-tooltip="tooltip-default"
