@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import animations from 'tailwindcss-animated';
+
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   darkMode: 'class',
@@ -11,8 +13,5 @@ export default {
       },
     },
   },
-  variants: {
-    lineClamp: ['hover'],
-  },
-  plugins: [],
+  plugins: [animations],
 };
