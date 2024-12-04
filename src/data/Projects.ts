@@ -23,25 +23,25 @@ export const PROJECTS: Project[] = [
       tags.Okta,
     ],
   },
-  {
-    title: 'Deprag Automation',
-    description:
-      'Deprag Automation System was automated to obtain values automatically from equipment, streamlining pass/fail determination. Implemented robust validations and enhanced security measures not only expedited the process but also addressed and mitigated outdated vulnerabilities.',
-    image: '/Deprag.webp',
-    tags: [tags.CSharp, tags.DotNet, tags.DevExpress, tags.SQLServer],
-  },
-  {
-    title: 'Impedance System',
-    description:
-      'Project involves effective communication with an impedance measurement device to obtain values and determine pass/fail statuses using advanced algorithms and curve analysis. It incorporates calibration and verification modules, ensuring security measures and alarm systems for a comprehensive and efficient solution.',
-    image: '/Impedance.webp',
-    tags: [tags.CSharp, tags.DotNet, tags.DevExpress, tags.SQLServer],
-  },
-  {
-    title: 'Hipot Electrical System',
-    description:
-      'Project that interfaces with an electrical measurement device, determining pass/fail outcomes. It employs a recipe manager for seamless equipment operation and features modules for historical data, alarms, security, configuration, and external service connections to manage traceability effectively.',
-    image: '/Hipot.webp',
-    tags: [tags.CSharp, tags.DotNet, tags.DevExpress, tags.SQLServer],
-  },
+  // {
+  //   title: 'Deprag Automation',
+  //   description:
+  //     'Deprag Automation System was automated to obtain values automatically from equipment, streamlining pass/fail determination. Implemented robust validations and enhanced security measures not only expedited the process but also addressed and mitigated outdated vulnerabilities.',
+  //   image: '/Deprag.webp',
+  //   tags: [tags.CSharp, tags.DotNet, tags.DevExpress, tags.SQLServer],
+  // },
+  // {
+  //   title: 'Impedance System',
+  //   description:
+  //     'Project involves effective communication with an impedance measurement device to obtain values and determine pass/fail statuses using advanced algorithms and curve analysis. It incorporates calibration and verification modules, ensuring security measures and alarm systems for a comprehensive and efficient solution.',
+  //   image: '/Impedance.webp',
+  //   tags: [tags.CSharp, tags.DotNet, tags.DevExpress, tags.SQLServer],
+  // },
+  // {
+  //   title: 'Hipot Electrical System',
+  //   description:
+  //     'Project that interfaces with an electrical measurement device, determining pass/fail outcomes. It employs a recipe manager for seamless equipment operation and features modules for historical data, alarms, security, configuration, and external service connections to manage traceability effectively.',
+  //   image: '/Hipot.webp',
+  //   tags: [tags.CSharp, tags.DotNet, tags.DevExpress, tags.SQLServer],
+  // },
 ];
